@@ -1,0 +1,28 @@
+              Notice for the package meteo_marine_traitement
+
+
+First of all the rough data used are data about the weather coming from different places at different times, so for us we will have to clean, store and change some things about it to make it works for weather forecast.
+
+The package is able (i hope) to store data on different ways ready for sikilearn with the help of parameters:
+
+- data: rough data you 'll have to work on.
+
+- jours(=days): you select the number of days you want per row. The more you have days, the less you'll have samples but you'll win accuracy on your prediction. Above 3 days it's not working well (in fact not at all).
+
+- vue(=prediction in time): you select if you want a weather prediction in one hour, two hours...Beware about limitations ! If you have selected one day before, you'll may not go further 23 hours for exemple.
+
+- cible(=variable's target): here you can choose the variable you want to predict. It could be: 'force'(wind strength), 'direction', 'humidité'(humidity), 'pression'(pressure), 'température', 'point_rosée'(index dew).
+
+- var_corbeille(=expendable variables): you can drop variables here if you want to reduce your dataframe's width, but on the other side you'll have more chances to loose accuracy on prediction. The variables you can drop: 'force', 'direction', 'humidité', 'pression', 'température', 'point_rosée', 'temps'(the month where data has been taken, indicates the 'season' of the mesure).
+
+
+Finally this class has 2 attributes:
+
+- class.target: to get the targets.
+
+- class.data_good_shape: you've guessed, it's the dataset.
+
+The package provide its results with 'int' datatypes to avoid being too heavy.
+
+Enjoy!
+
